@@ -278,10 +278,14 @@ sub menu1
     $header = $q->start_html(
         -title => 'Admin page',
         -style => {-src => '../css/style.css'},
-        -script => {-language => 'javascript', -src => '../js/prototype.js'}
+        -style => {-src => '../css/calendarview.css'},
+        -script => {-language => 'javascript', -src => '../js/prototype.js'},
+        -script => {-language => 'javascript', -src => '../js/calendarview.js'}
     );
 
     $logout_link = $q->a({-href => 'index.cgi?action=logout'}, "Logout");
+
+    $date = "<div id='calendar'></div>\n<div id='date'>Select Date</div>\n";
 
     print $header,
           $logout_link,
@@ -294,7 +298,8 @@ sub menu1
               $q->submit(-name=>'New Vacancy'),
               $q->submit(-name=>'Search'),
               $q->end_form,
-          $q->hr,]);
+          $q->hr,]),
+          $date;
 
 
 
