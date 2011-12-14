@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+
 #log.pl
 use FreezeThaw qw(freeze thaw cmpStr safeFreeze cmpStrHard);
 use Switch;

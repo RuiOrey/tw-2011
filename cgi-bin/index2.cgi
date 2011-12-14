@@ -270,21 +270,31 @@ $sth->execute(($id),($ids),($host),($q->param('date1')),($q->param('date2')),($q
 $session = CGI::Session->load();
 $q = new CGI; #object CGI
 
-sub menu1{
-$id=$session->param("uid");
-my $name = $session->param("em1");
-print	$q->start_html(-title=>'Admin page',-style=>{-src=>'../css/style.css'}),
-	$q->h1("Couch Surfing - $name"),
-	$q->Tr([
-	$q->start_form,
-	$q->defaults('Home'),
-	$q->submit(-name=>'View Users'),
-	$q->submit(-name=>'View Vacancies'),
-	$q->submit(-name=>'New Vacancy'),
-	$q->submit(-name=>'Search'),
-	$q->end_form,
-	$q->hr,
-	]);
+sub menu1
+{
+    $id=$session->param("uid");
+    my $name = $session->param("em1");
+
+    $header = $q->start_html(
+        -title => 'Admin page',
+        -style => {-src => '../css/style.css'},
+        -script => {-language => 'javascript', -src => '../js/prototype.js'}
+    );
+
+    $logout_link = $q->a({-href => 'index.cgi?action=logout'}, "Logout");
+
+    print $header,
+          $logout_link,
+          $q->h1("Couch Surfing - $name"),
+          $q->Tr([
+              $q->start_form,
+              $q->defaults('Home'),
+              $q->submit(-name=>'View Users'),
+              $q->submit(-name=>'View Vacancies'),
+              $q->submit(-name=>'New Vacancy'),
+              $q->submit(-name=>'Search'),
+              $q->end_form,
+          $q->hr,]);
 
 
 
@@ -340,7 +350,6 @@ print $q->header(-cache_control=>"no-cache, no-store, must-revalidate");
 
 	print $q->header('text/html', -expires => "+30m",-cache_control=>"no-cache, no-store, must-revalidate");
 	#print "<h2>Welcome";
-	print $q->a({-href=>'index.cgi?action=logout'},"Logout");
 	menu1;
 	print $q->end_html;
 }    
