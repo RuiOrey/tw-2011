@@ -283,6 +283,7 @@ sub menu1
         -script => [
             {-language => 'javascript', -src => '../js/prototype.js'},
             {-language => 'javascript', -src => '../js/calendarview.js'}]
+            {-language => 'javascript', -src => '../js/onload.js'},
     );
 
     $logout_link = $q->a({-href => 'index.cgi?action=logout'}, "Logout");
