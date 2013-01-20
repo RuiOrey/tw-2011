@@ -1,0 +1,33 @@
+_____________________________________________________________________________________
+
+RELATORIO Trabalho TW 2011
+Rui Luis Sousa de Albuquerque d'Orey
+070307046
+_____________________________________________________________________________________
+
+modo administrador
+
+username: 	admin
+password: 	admin
+
+_____________________________________________________________________________________
+Funções implementadas:
+
+-reinicializar;
+-registar;
+-listar utilizadores com diferentes informações consoante o tipo de acesso(não 		autenticado, utilizador genérico e administrador);
+-adicionar estadia com calculo da reputaçao;
+-listar estadias com diferentes informações consoante o tipo de acesso;
+
+-editar utilizador e estadia com edição livre em modo administrador (permite editar em nome de outro utilizador);
+-password perdida: envia um email;
+-listar utilizadores e estadias com variações( e com opção de ordenação de lista de utilizadores por reputação no modo utilizador generico);
+-listar utilizadores de local: listar todos os utilizadores de um dado pais mediante pesquisa;
+-listar estadias de um utilizador: listar as estadias relativas apenas a um dado utilizador mediante pesquisa.
+
+-pequeno calendario em javascript presente no ecra de nova estadia quando se clica em data;
+-encriptaçao de password na base de dados;
+-https definido no ficheiro .htaccess;
+-verificações.
+_____________________________________________________________________________________
+
